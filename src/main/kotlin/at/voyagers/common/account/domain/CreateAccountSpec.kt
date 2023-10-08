@@ -24,7 +24,7 @@ data class CreateAccountSpec(
     }
 
     fun toDomain(): Account {
-        return Account(null, email, password, AccountRole.CUSTOMER)
+        return Account(email, password, AccountRole.CUSTOMER)
     }
 
 }
