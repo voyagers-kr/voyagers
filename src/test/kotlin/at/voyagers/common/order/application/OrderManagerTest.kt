@@ -1,24 +1,20 @@
 package at.voyagers.common.order.application
 
 import at.voyagers.common.order.domain.Order
-import at.voyagers.common.order.temp.ProductWriter
+import io.mockk.impl.annotations.InjectMockKs
+import io.mockk.impl.annotations.MockK
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.ArgumentMatchers.any
 import org.mockito.BDDMockito.given
-import org.mockito.InjectMocks
-import org.mockito.Mock
 import org.mockito.junit.jupiter.MockitoExtension
 
 @ExtendWith(MockitoExtension::class)
 class OrderManagerTest {
 
-    init {
-
-    }
-    @Mock lateinit var orderWriter: OrderWriter
-    @Mock lateinit var productWriter: ProductWriter
-    @InjectMocks lateinit var orderManager: OrderManager
+    @MockK lateinit var orderWriter: OrderWriter
+    @MockK lateinit var productWriter: ProductWriter
+    @InjectMockKs lateinit var orderManager: OrderManager
 
     @Test
     fun placeTest() {

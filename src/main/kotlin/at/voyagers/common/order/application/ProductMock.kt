@@ -1,4 +1,4 @@
-package at.voyagers.common.order.temp
+package at.voyagers.common.order.application
 
 import org.springframework.stereotype.Component
 import org.springframework.stereotype.Repository

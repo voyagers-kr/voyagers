@@ -1,7 +1,6 @@
 package at.voyagers.common.order.application
 
 import at.voyagers.common.order.domain.Order
-import at.voyagers.common.order.temp.ProductWriter
 import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
 
