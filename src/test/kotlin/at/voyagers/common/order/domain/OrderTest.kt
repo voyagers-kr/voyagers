@@ -1,23 +1,30 @@
 package at.voyagers.common.order.domain
 
+import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
 
 class OrderTest {
 
     @Test
-    fun `고객 id가 없을 경우 예외발생`() {
-        val customerId = null
+    fun `주문 품목이 비어 있는 경우 예외 발생`() {
+        // given
+        val orderVariants = mutableListOf<OrderVariant>()
 
-        assertThatThrownBy { Order.fixture(customerId) }
+        // when & then
+        assertThatThrownBy { Order.fixture(orderVariants = orderVariants) }
             .isInstanceOf(IllegalArgumentException::class.java)
     }
 
     @Test
-    fun `주문품목이 비어있는 경우 예외 발생`() {
-        val variants = emptyList<OrderVariant>()
+    fun `주문 생성`() {
+        // given
+        val orderId = "orderId";
 
-        assertThatThrownBy { Order.fixture(variants = variants) }
-            .isInstanceOf(IllegalArgumentException::class.java)
+        // when
+        val order = Order.fixture(id = orderId)
+
+        // then
+        assertThat(order.id).isEqualTo(orderId)
     }
 }
