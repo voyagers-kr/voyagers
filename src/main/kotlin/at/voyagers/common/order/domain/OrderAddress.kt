@@ -5,7 +5,7 @@ package at.voyagers.common.order.domain
  * Order 에서 사용하는 주소
  */
 data class OrderAddress(
-    val name: String,
-    val phone: String,
-    val address: String,
+    val name: String = "",
+    val phone: String = "",
+    val address: String = "",
 )
