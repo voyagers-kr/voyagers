@@ -1,20 +1,25 @@
 package at.voyagers.common.cart.domain
 
-import at.voyagers.common.variant.domain.Variant
-import java.util.UUID
+import at.voyagers.common.order.domain.OrderVariant
+import java.util.*
 
 data class Cart(
     val id: String,
     val customerId: String,
-    val variants: List<Variant>,
+    val variants: MutableList<OrderVariant>,
 ) {
     companion object {
         fun initial(customerId: String): Cart {
             return Cart(
                 id = UUID.randomUUID().toString(),
                 customerId = customerId,
-                variants = listOf(),
+                variants = mutableListOf(),
             )
         }
+    }
+
+    fun addVariant(variant: OrderVariant): Cart {
+        variants.add(variant)
+        return this
     }
 }
