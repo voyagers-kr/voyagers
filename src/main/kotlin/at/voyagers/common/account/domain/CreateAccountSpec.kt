@@ -1,7 +1,5 @@
 package at.voyagers.common.account.domain
 
-import java.lang.IllegalArgumentException
-
 data class CreateAccountSpec(
     val email: String,
     val password: String,
@@ -12,9 +10,7 @@ data class CreateAccountSpec(
     }
 
     private fun validatePassword(password: String) {
-        if (password.length < 8) {
-            throw IllegalArgumentException()
-        }
+        if (password.length < 8) throw IllegalArgumentException()
     }
 
     private fun validateEmail(email: String) {
