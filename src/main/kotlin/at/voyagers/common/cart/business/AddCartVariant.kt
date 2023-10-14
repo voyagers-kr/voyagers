@@ -2,6 +2,7 @@ package at.voyagers.common.cart.business
 
 import at.voyagers.common.cart.adapter.component.CartReader
 import at.voyagers.common.cart.business.request.AddCartVariantRequest
+import at.voyagers.common.cart.domain.Cart
 import at.voyagers.common.customer.domain.Customer
 import at.voyagers.common.order.domain.OrderVariant
 import at.voyagers.common.product.domain.Product
@@ -21,13 +22,13 @@ class AddCartVariant(
     fun execute(request: AddCartVariantRequest): Boolean {
 //        val customer = customerReader.read(request.accountId)
         val customer = Customer(UUID.randomUUID().toString(), "John", "Doe", UUID.randomUUID().toString())
-        val cart = cartReader.read(request.cartId)
-        val variant = variantReader.read(request.variantId)
+        val cart: Cart = cartReader.read(request.cartId)
+        val variant: Variant = variantReader.read(request.variantId)
 //        val product = productReader.read(variant.productId)
         val product = Product(UUID.randomUUID().toString(), "Product", "Description",
             Random().nextDouble(), ProductStatus.ACTIVE, UUID.randomUUID().toString())
 
-        val orderVariant = OrderVariant(cart.id, product.price, request.quantity)
+        val orderVariant = OrderVariant(variant.id, product.price, request.quantity)
         cart.addVariant(orderVariant)
 
         return true
