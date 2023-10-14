@@ -11,7 +11,7 @@ class ProductReader {
 @Component
 class ProductWriter {
 
-    fun decrease(productOptionId: String, amount: Int) {
+    fun decrease(productOptionId: Long, amount: Int) {
 
     }
 

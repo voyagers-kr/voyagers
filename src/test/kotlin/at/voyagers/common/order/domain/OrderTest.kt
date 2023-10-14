@@ -19,7 +19,7 @@ class OrderTest {
     @Test
     fun `주문 생성`() {
         // given
-        val orderId = "orderId";
+        val orderId = 1L;
 
         // when
         val order = Order.fixture(id = orderId)

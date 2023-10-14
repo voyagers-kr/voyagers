@@ -3,8 +3,8 @@ package at.voyagers.common.order.domain
 import at.voyagers.common.order.domain.OrderStatus.PENDING_PAYMENT
 
 class Order(
-    val id: String? = null,
-    val customerId: String,
+    val id: Long? = null,
+    val customerId: Long,
     val orderVariants: MutableList<OrderVariant>,
     val customerAddress: OrderAddress,
     val status: OrderStatus = PENDING_PAYMENT,
@@ -16,10 +16,10 @@ class Order(
 
     companion object {
         fun fixture(
-            customerId: String = "customerId",
+            customerId: Long = 1L,
             orderVariants: MutableList<OrderVariant> = mutableListOf(OrderVariant.fixture()),
             customerAddress: OrderAddress = OrderAddress(),
-            id: String? = null,
+            id: Long? = null,
         ): Order {
             return Order(
                 id = id,
@@ -49,8 +49,8 @@ class Order(
 }
 
 data class OrderCreateSpec(
-    val customerId: String,
-    val vendorId: String,
+    val customerId: Long,
+    val vendorId: Long,
     val orderVariants: MutableList<OrderVariant>,
     val customerAddress: OrderAddress,
 ) {

@@ -1,8 +1,8 @@
 package at.voyagers.common.order.domain
 
 class OrderVariant(
-    val variantId: String,
-    val price: String,
+    val variantId: Long,
+    val price: Int,
     val quantity: Int,
 ) {
 
@@ -12,8 +12,8 @@ class OrderVariant(
 
     companion object {
         fun fixture(
-            variantId: String = "variantId",
-            price: String = "price",
+            variantId: Long = 1L,
+            price: Int = 3000,
             quantity: Int = 1,
         ): OrderVariant {
             return OrderVariant(

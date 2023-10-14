@@ -19,7 +19,7 @@ class OrderVariantTest {
     @Test
     fun `주문 품목 생성`() {
         // given
-        val variantId = "variantId"
+        val variantId = 1L
 
         // when
         val orderVariant = OrderVariant.fixture(variantId = variantId)

@@ -25,8 +25,8 @@ class OrderController(
 }
 
 data class OrderCreateRequest(
-    val customerId: String,
-    val vendorId: String,
+    val customerId: Long,
+    val vendorId: Long,
     val orderVariants: MutableList<OrderVariant>,
     val customerAddress: OrderAddress,
 ) {
