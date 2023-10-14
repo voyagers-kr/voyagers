@@ -1,11 +1,9 @@
 package at.voyagers.common.account.domain
 
-import org.assertj.core.api.Assertions.assertThat
-import org.assertj.core.api.Assertions.assertThatThrownBy
+import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 
 class CreateAccountSpecTest {
-
     @Test
     fun `올바른 정보로 요청 시 계정이 생성된다`() {
         // given
@@ -17,8 +15,8 @@ class CreateAccountSpecTest {
         val account: Account = createAccountSpec.toDomain()
 
         // then
-        assertThat(account.email).isEqualTo(validEmail)
-        assertThat(account.password).isEqualTo(validPassword)
+        Assertions.assertThat(account.email).isEqualTo(validEmail)
+        Assertions.assertThat(account.password).isEqualTo(validPassword)
     }
     @Test
     fun `유효하지 않은 이메일로 요청 시 예외가 발생한다`() {
@@ -26,7 +24,7 @@ class CreateAccountSpecTest {
         val invalidEmail = "test_test.com"
 
         // when - then
-        assertThatThrownBy { CreateAccountSpec(email = invalidEmail, "") }
+        Assertions.assertThatThrownBy { CreateAccountSpec(email = invalidEmail, "") }
             .isInstanceOf(IllegalArgumentException::class.java)
     }
 
@@ -36,7 +34,7 @@ class CreateAccountSpecTest {
         val invalidPassword = ""
 
         // when - then
-        assertThatThrownBy { CreateAccountSpec("test@test.com", password = invalidPassword) }
+        Assertions.assertThatThrownBy { CreateAccountSpec("test@test.com", password = invalidPassword) }
             .isInstanceOf(IllegalArgumentException::class.java)
     }
 
