@@ -18,8 +18,7 @@ data class Cart(
         }
     }
 
-    fun addVariant(variant: OrderVariant): Cart {
+    fun addVariant(variant: OrderVariant) {
         variants.add(variant)
-        return this
     }
 }
