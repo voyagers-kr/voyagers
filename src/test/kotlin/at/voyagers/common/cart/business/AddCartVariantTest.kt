@@ -11,7 +11,7 @@ import io.mockk.justRun
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
-import java.util.*
+import kotlin.random.Random
 
 @SpringBootTest
 class AddCartVariantTest {
@@ -25,26 +25,21 @@ class AddCartVariantTest {
     @Test
     fun `Cart에 Variant를 추가한다`() {
         every { cartReader.read(any()) } returns Cart(
-            id = UUID.randomUUID().toString(),
-            customerId = UUID.randomUUID().toString(),
+            id = Random.nextLong(),
+            customerId = Random.nextLong(),
             variants = mutableListOf(),
         )
         every { variantReader.read(any()) } returns Variant(
-            id = UUID.randomUUID().toString(),
-            productId = UUID.randomUUID().toString(),
-            quantity = Random().nextInt(),
+            id = Random.nextLong(),
+            productId = Random.nextLong(),
+            quantity = Random.nextInt(),
         )
 
         // given
         val addCartVariant = AddCartVariant(cartReader, variantReader)
 
         // when
-        val result = addCartVariant.execute(AddCartVariantRequest(
-            UUID.randomUUID().toString(),
-            UUID.randomUUID().toString(),
-            UUID.randomUUID().toString(),
-            1
-        ))
+        val result = addCartVariant.execute(AddCartVariantRequest(Random.nextLong(), Random.nextLong(), Random.nextLong(), Random.nextInt(),))
 
         // then
         assertTrue(result)

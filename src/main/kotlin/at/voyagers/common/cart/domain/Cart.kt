@@ -6,11 +6,11 @@ import kotlin.random.Random
 
 data class Cart(
     val id: Long,
-    val customerId: String,
+    val customerId: Long,
     val variants: MutableList<OrderVariant>,
 ) {
     companion object {
-        fun initial(customerId: String): Cart {
+        fun initial(customerId: Long): Cart {
             return Cart(
                 id = Random.nextLong(),
                 customerId = customerId,

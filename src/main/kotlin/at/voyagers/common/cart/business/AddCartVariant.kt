@@ -10,8 +10,9 @@ import at.voyagers.common.product.domain.ProductStatus
 import at.voyagers.common.variant.adapter.component.VariantReader
 import at.voyagers.common.variant.domain.Variant
 import org.springframework.stereotype.Service
-import java.util.Random
 import java.util.UUID
+import kotlin.random.Random
+import kotlin.random.Random.Default
 
 @Service
 class AddCartVariant(
@@ -21,12 +22,12 @@ class AddCartVariant(
 
     fun execute(request: AddCartVariantRequest): Boolean {
 //        val customer = customerReader.read(request.accountId)
-        val customer = Customer(UUID.randomUUID().toString(), "John", "Doe", UUID.randomUUID().toString())
+        val customer = Customer(Random.nextLong(), "John", "Doe", Random.nextLong())
         val cart: Cart = cartReader.read(request.cartId)
         val variant: Variant = variantReader.read(request.variantId)
 //        val product = productReader.read(variant.productId)
-        val product = Product(UUID.randomUUID().toString(), "Product", "Description",
-            Random().nextDouble(), ProductStatus.ACTIVE, UUID.randomUUID().toString())
+        val product = Product(Random.nextLong(), "Product", "Description",
+            Random.nextDouble(), ProductStatus.ACTIVE, Random.nextLong())
 
         val orderVariant = OrderVariant(variant.id, product.price, request.quantity)
         cart.addVariant(orderVariant)

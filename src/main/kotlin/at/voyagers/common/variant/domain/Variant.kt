@@ -1,6 +1,7 @@
 package at.voyagers.common.variant.domain
 
 import java.util.*
+import kotlin.random.Random
 
 data class Variant(
     val id: Long,
@@ -8,9 +9,9 @@ data class Variant(
     val quantity: Int,
 ) {
     companion object {
-        fun create(productId: String, quantity: Int): Variant {
+        fun create(productId: Long, quantity: Int): Variant {
             return Variant(
-                id = UUID.randomUUID().toString(),
+                id = Random.nextLong(),
                 productId = productId,
                 quantity = quantity,
             )

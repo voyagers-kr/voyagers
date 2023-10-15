@@ -3,14 +3,15 @@ package at.voyagers.common.cart.adapter.component
 import at.voyagers.common.cart.domain.Cart
 import org.springframework.stereotype.Component
 import java.util.*
+import kotlin.random.Random
 
 @Component
 class CartReader {
 
-    fun read(cartId: String): Cart {
+    fun read(cartId: Long): Cart {
         return Cart(
-            id = UUID.randomUUID().toString(),
-            customerId = UUID.randomUUID().toString(),
+            id = Random.nextLong(),
+            customerId = Random.nextLong(),
             variants = mutableListOf(),
         )
     }
