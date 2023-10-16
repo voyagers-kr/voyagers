@@ -22,7 +22,7 @@ class OrderJpaRepository(
 
 }
 
-interface OrderEntityRepository : JpaRepository<OrderEntity, String> {
+interface OrderEntityRepository : JpaRepository<OrderEntity, Long> {
 
 }
 

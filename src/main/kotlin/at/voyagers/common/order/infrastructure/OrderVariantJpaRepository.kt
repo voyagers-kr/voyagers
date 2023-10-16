@@ -12,7 +12,7 @@ class OrderVariantJpaRepository(
 
 }
 
-interface OrderVariantEntityRepository : JpaRepository<OrderVariantEntity, String>
+interface OrderVariantEntityRepository : JpaRepository<OrderVariantEntity, Long>
 
 fun OrderVariant.toEntity(): OrderVariantEntity {
     return OrderVariantEntity()
