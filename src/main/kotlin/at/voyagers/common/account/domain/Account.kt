@@ -4,5 +4,5 @@ data class Account(
     val email: String,
     val password: String,
     val role: AccountRole,
-    var id: Long? = null,
+    val id: Long? = null,
 )

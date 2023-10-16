@@ -1,8 +1,8 @@
 package at.voyagers.common.customer.domain
 
 data class CustomerAddress(
-    val id: Long,
-    val customerId: String,
+    val id: Long? = null,
+    val customerId: Long? = null,
     val address: String,
-    val default: Boolean
+    val default: Boolean,
 )
