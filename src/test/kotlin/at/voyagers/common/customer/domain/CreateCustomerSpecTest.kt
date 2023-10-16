@@ -1,5 +1,6 @@
 package at.voyagers.common.customer.domain
 
+import at.voyagers.common.customer.application.CreateCustomerSpec
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test

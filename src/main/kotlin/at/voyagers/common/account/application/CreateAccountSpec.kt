@@ -1,4 +1,7 @@
-package at.voyagers.common.account.domain
+package at.voyagers.common.account.application
+
+import at.voyagers.common.account.domain.Account
+import at.voyagers.common.account.domain.AccountRole
 
 data class CreateAccountSpec(
     val email: String,

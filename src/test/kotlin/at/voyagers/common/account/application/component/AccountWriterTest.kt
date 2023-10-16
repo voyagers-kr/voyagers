@@ -1,9 +1,10 @@
-package at.voyagers.common.account.business.component
+package at.voyagers.common.account.application.component
 
+import at.voyagers.common.account.application.AccountWriter
 import at.voyagers.common.account.domain.Account
 import at.voyagers.common.account.domain.AccountRepository
 import at.voyagers.common.account.domain.AccountRole
-import at.voyagers.common.account.domain.CreateAccountSpec
+import at.voyagers.common.account.application.CreateAccountSpec
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

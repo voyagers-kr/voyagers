@@ -1,5 +1,6 @@
 package at.voyagers.common.account.domain
 
+import at.voyagers.common.account.application.CreateAccountSpec
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 

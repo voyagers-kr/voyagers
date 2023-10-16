@@ -1,4 +1,4 @@
-package at.voyagers.common.customer.domain
+package at.voyagers.common.customer.application
 
 class CreateCustomerSpec(val name: String, val phone: String, val address: String) {
     init {
