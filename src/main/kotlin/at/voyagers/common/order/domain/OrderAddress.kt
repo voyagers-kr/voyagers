@@ -1,6 +1,9 @@
 package at.voyagers.common.order.domain
 
-data class OrderAddress(
+import jakarta.persistence.Embeddable
+
+@Embeddable
+class OrderAddress(
     val name: String = "",
     val phone: String = "",
     val address: String = "",

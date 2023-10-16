@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service
 class OrderService(
     private val orderManager: OrderManager,
 ) {
-    fun create(orderCreateSpec: OrderCreateSpec): Order {
-        return orderManager.place(orderCreateSpec.toDomain())
+    fun create(spec: OrderCreateSpec): Order {
+        return orderManager.place(Order(spec))
     }
 }

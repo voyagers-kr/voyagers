@@ -14,7 +14,7 @@ class OrderJpaRepository(
     override fun save(order: Order): Order {
         val createdOrder = orderEntityRepository.save(order.toEntity()).toDomain()
         val createdOrderVariants =
-            orderVariantEntityRepository.saveAll(createdOrder.orderVariants.map { it.toEntity() })
+            orderVariantEntityRepository.saveAll(createdOrder.orderVariants.map { it.toEntity(createdOrder) })
         createdOrder.addOrderVariants(createdOrderVariants.map { it.toDomain() }
             .toCollection(mutableListOf()))
         return createdOrder
@@ -27,5 +27,10 @@ interface OrderEntityRepository : JpaRepository<OrderEntity, Long> {
 }
 
 fun Order.toEntity(): OrderEntity {
-    return OrderEntity()
+    return OrderEntity(
+        orderVariants = mutableListOf(),
+        customerId = this.customerId,
+        status = this.status,
+        customerAddress = this.customerAddress,
+    )
 }

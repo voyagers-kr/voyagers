@@ -33,7 +33,6 @@ data class OrderCreateRequest(
     fun toOrderCreateSpec(): OrderCreateSpec {
         return OrderCreateSpec(
             customerId = customerId,
-            vendorId = vendorId,
             orderVariants = orderVariants,
             customerAddress = customerAddress,
         )

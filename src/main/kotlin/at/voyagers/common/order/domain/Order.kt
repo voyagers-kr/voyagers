@@ -14,6 +14,12 @@ class Order(
         require(orderVariants.isNotEmpty()) { "Order must have at least one variant" }
     }
 
+    constructor(spec: OrderCreateSpec) : this(
+        customerId = spec.customerId,
+        orderVariants = spec.orderVariants,
+        customerAddress = spec.customerAddress,
+    )
+
     companion object {
         fun fixture(
             customerId: Long = 1L,
@@ -50,15 +56,6 @@ class Order(
 
 data class OrderCreateSpec(
     val customerId: Long,
-    val vendorId: Long,
     val orderVariants: MutableList<OrderVariant>,
     val customerAddress: OrderAddress,
-) {
-    fun toDomain(): Order {
-        return Order(
-            customerId = customerId,
-            orderVariants = orderVariants,
-            customerAddress = customerAddress,
-        )
-    }
-}
+)

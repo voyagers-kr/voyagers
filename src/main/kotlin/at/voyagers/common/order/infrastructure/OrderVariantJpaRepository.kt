@@ -14,6 +14,11 @@ class OrderVariantJpaRepository(
 
 interface OrderVariantEntityRepository : JpaRepository<OrderVariantEntity, Long>
 
-fun OrderVariant.toEntity(): OrderVariantEntity {
-    return OrderVariantEntity()
+fun OrderVariant.toEntity(order: OrderEntity): OrderVariantEntity {
+    return OrderVariantEntity(
+        order = order,
+        quantity = this.quantity,
+        price = this.price,
+        variantId = this.variantId,
+    )
 }
