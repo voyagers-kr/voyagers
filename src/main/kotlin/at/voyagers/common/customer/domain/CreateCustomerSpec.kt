@@ -12,7 +12,7 @@ class CreateCustomerSpec(val name: String, val phone: String, val address: Strin
     }
 
     private fun validatePhone(phone: String) {
-        if (phone.length != 8) throw IllegalArgumentException()
+        if (phone.length != 11) throw IllegalArgumentException()
     }
 
     private fun validateName(name: String) {
