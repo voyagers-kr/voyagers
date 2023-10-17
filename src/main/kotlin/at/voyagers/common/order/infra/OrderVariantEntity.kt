@@ -10,6 +10,7 @@ class OrderVariantEntity(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
     @ManyToOne(fetch = LAZY)
     val order: OrderEntity,
 

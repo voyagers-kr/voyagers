@@ -8,7 +8,6 @@ import jakarta.persistence.GenerationType.IDENTITY
 
 @Entity
 class OrderEntity(
-    @JoinColumn(name = "order_id", referencedColumnName = "id")
     @OneToMany(mappedBy = "order", cascade = [CascadeType.ALL])
     val orderVariants: MutableList<OrderVariantEntity>,
 
