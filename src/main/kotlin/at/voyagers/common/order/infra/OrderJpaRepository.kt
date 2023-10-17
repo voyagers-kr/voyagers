@@ -1,4 +1,4 @@
-package at.voyagers.common.order.infrastructure
+package at.voyagers.common.order.infra
 
 import at.voyagers.common.order.domain.Order
 import at.voyagers.common.order.domain.OrderRepository
