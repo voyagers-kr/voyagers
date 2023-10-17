@@ -1,7 +1,7 @@
 package at.voyagers.common.order.infra
 
 import at.voyagers.common.order.domain.Order
-import at.voyagers.common.order.domain.OrderRepository
+import at.voyagers.common.order.domain.repository.OrderRepository
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

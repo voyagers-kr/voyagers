@@ -1,4 +1,4 @@
-package at.voyagers.common.order.application
+package at.voyagers.common.order.application.component
 
 import at.voyagers.common.order.domain.Order
 import org.springframework.stereotype.Component

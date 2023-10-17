@@ -1,4 +1,4 @@
-package at.voyagers.common.order.ui
+package at.voyagers.common.order.persistence
 
 import at.voyagers.common.order.application.OrderService
 import at.voyagers.common.order.domain.Order

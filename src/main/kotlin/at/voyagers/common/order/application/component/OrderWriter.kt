@@ -1,7 +1,7 @@
-package at.voyagers.common.order.application
+package at.voyagers.common.order.application.component
 
 import at.voyagers.common.order.domain.Order
-import at.voyagers.common.order.domain.OrderRepository
+import at.voyagers.common.order.domain.repository.OrderRepository
 import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
 
