@@ -28,4 +28,8 @@ class OrderEntity(
         return Order.fixture()
     }
 
+    fun addOrderVariants(orderVariants: MutableList<OrderVariantEntity>) {
+        this.orderVariants.addAll(orderVariants)
+    }
+
 }
