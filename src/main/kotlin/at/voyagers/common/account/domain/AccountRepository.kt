@@ -1,7 +1,6 @@
 package at.voyagers.common.account.domain
 
+import org.springframework.data.jpa.repository.JpaRepository
 
-interface AccountRepository {
 
-    fun save(account: Account): Account
-}
+interface AccountRepository: JpaRepository<Account, Long>
