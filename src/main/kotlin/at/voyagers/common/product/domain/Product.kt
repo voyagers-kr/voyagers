@@ -1,10 +1,10 @@
 package at.voyagers.common.product.domain
 
 data class Product(
-    val id: String,
+    val id: Long? = null,
     val name: String,
     val description: String,
     val price: Double,
     val status: ProductStatus,
-    val categoryId: String,
+    val categoryId: Long? = null,
 )
