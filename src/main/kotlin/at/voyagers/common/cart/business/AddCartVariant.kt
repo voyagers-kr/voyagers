@@ -27,7 +27,7 @@ class AddCartVariant(
         val product = Product(Random.nextLong(), "Product", "Description",
             Random.nextDouble(), ProductStatus.ACTIVE, Random.nextLong())
 
-        val orderVariant = OrderVariant(variant.id, product.price, request.quantity)
+        val orderVariant = OrderVariant(variant.id!!, product.price, request.quantity)
         cart.addVariant(orderVariant)
 
         return true
