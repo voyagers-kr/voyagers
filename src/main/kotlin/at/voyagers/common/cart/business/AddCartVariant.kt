@@ -1,18 +1,16 @@
 package at.voyagers.common.cart.business
 
-import at.voyagers.common.cart.adapter.component.CartReader
+import at.voyagers.common.cart.adapter.CartReader
 import at.voyagers.common.cart.business.request.AddCartVariantRequest
 import at.voyagers.common.cart.domain.Cart
 import at.voyagers.common.customer.domain.Customer
 import at.voyagers.common.order.domain.OrderVariant
 import at.voyagers.common.product.domain.Product
 import at.voyagers.common.product.domain.ProductStatus
-import at.voyagers.common.variant.adapter.component.VariantReader
+import at.voyagers.common.variant.application.VariantReader
 import at.voyagers.common.variant.domain.Variant
 import org.springframework.stereotype.Service
-import java.util.UUID
 import kotlin.random.Random
-import kotlin.random.Random.Default
 
 @Service
 class AddCartVariant(

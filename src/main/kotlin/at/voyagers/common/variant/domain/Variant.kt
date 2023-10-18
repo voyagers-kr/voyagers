@@ -17,4 +17,6 @@ data class Variant(
             )
         }
     }
+
+    // spec -> domain 이 되기 위한 조건을 검증
 }

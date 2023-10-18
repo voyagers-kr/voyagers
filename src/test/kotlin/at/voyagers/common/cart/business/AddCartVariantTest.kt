@@ -1,13 +1,12 @@
 package at.voyagers.common.cart.business
 
-import at.voyagers.common.cart.adapter.component.CartReader
+import at.voyagers.common.cart.adapter.CartReader
 import at.voyagers.common.cart.business.request.AddCartVariantRequest
 import at.voyagers.common.cart.domain.Cart
-import at.voyagers.common.variant.adapter.component.VariantReader
+import at.voyagers.common.variant.application.VariantReader
 import at.voyagers.common.variant.domain.Variant
 import com.ninjasquad.springmockk.MockkBean
 import io.mockk.every
-import io.mockk.justRun
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

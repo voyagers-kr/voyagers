@@ -1,4 +1,4 @@
-package at.voyagers.common.variant.adapter.component
+package at.voyagers.common.variant.application
 
 import at.voyagers.common.variant.domain.Variant
 import org.springframework.stereotype.Component

@@ -1,4 +1,4 @@
-package at.voyagers.common.cart.adapter.component
+package at.voyagers.common.cart.adapter
 
 import at.voyagers.common.cart.domain.Cart
 import org.springframework.stereotype.Component
