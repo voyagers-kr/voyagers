@@ -17,7 +17,7 @@ class OrderVariantEntity(
     @Column(nullable = false)
     val variantId: Long,
 
-    val price: Int,
+    val price: Double,
 
     val quantity: Int,
 ) {
