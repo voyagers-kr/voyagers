@@ -5,6 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.3"
 	kotlin("jvm") version "1.8.22"
 	kotlin("plugin.spring") version "1.8.22"
+	id("org.jetbrains.kotlin.plugin.jpa") version "1.6.21"
 }
 
 group = "at"
@@ -25,6 +26,10 @@ dependencies {
 
 	testImplementation("com.ninja-squad:springmockk:4.0.2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("com.ninja-squad:springmockk:4.0.2")
+	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	runtimeOnly("com.h2database:h2")
 }
 
 tasks.withType<KotlinCompile> {

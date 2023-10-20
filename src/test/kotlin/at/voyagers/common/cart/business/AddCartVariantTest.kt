@@ -38,7 +38,7 @@ class AddCartVariantTest {
         val addCartVariant = AddCartVariant(cartReader, variantReader)
 
         // when
-        val result = addCartVariant.execute(AddCartVariantRequest(Random.nextLong(), Random.nextLong(), Random.nextLong(), Random.nextInt(),))
+        val result = addCartVariant.execute(AddCartVariantRequest(Random.nextLong(), Random.nextLong(), Random.nextLong(), Random.nextInt(5),))
 
         // then
         assertTrue(result)
