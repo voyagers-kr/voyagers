@@ -5,5 +5,5 @@ data class Customer(
     val name: String,
     val phone: String,
 
-    val accountId: String
+    val accountId: Long
 )
